@@ -30,7 +30,7 @@
 
     <div id="root" class="d-flex  justify-content-center align-items-center " style="height: 100vh;">
         <i v-if="emailList.length<10" class="fas fa-spinner fa-spin fa-8x"></i>
-        <ul v-else="emailList.length=10" class="h2">
+        <ul v-else="emailList.length===10" class="h2">
             <li v-for="email in emailList">{{email}}</li>
         </ul>
     </div>
