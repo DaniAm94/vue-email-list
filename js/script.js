@@ -7,15 +7,19 @@ const app = createApp({
         emailList: []
     }),
     methods: {
-        fetchEmail() {
-            axios.get(endPoint).then((res) => {
-                this.emailList.push(res.data.response);
-            })
+        fetchNEmail(n) {
+
+            for (let i = 1; i <= n; i++) {
+                axios.get(endPoint).then((res) => {
+                    this.emailList.push(res.data.response);
+                })
+            }
+
         }
     },
     created() {
-        for (let i = 1; i <= 10; i++)
-            this.fetchEmail();
+        this.fetchNEmail(10);
+
     }
 })
 
